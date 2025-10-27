@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Lobaroy Qobulova — Portfolio</title>
+<meta name="description" content="Lobaroy Qobulova — Web dasturlash talabasining zamonaviy portfolio sahifasi. HTML • CSS • JS" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg-img: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1800&q=80');
+    --accent-1: #ffb6d8;
+    --accent-2: #a8c6ff;
+    --accent-3: #ffd9a8;
+    --glass: rgba(255,255,255,0.16);
+    --glass-strong: rgba(255,255,255,0.26);
+    --text-dark: #071128;
+    --muted-dark: rgba(7,17,40,0.65);
+    --radius: 16px;
+    --shadow-1: 0 10px 30px rgba(2,6,23,0.25);
+    --max-width: 1200px;
+  }
+
+  /* Dark theme variables (toggled by .dark on body) */
+  body.dark {
+    --glass: rgba(6,10,20,0.42);
+    --glass-strong: rgba(255,255,255,0.03);
+    --text-dark: #e6eef8;
+    --muted-dark: rgba(230,238,248,0.7);
+    background-color: #061025;
+  }
+
+  /* Reset */
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;
+    color:var(--text-dark);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    background-image: var(--bg-img);
+    background-size: cover;
+    background-position: center;
+    position:relative;
+    overflow-x:hidden;
+  }
+
+  /* overlay & animated gradient */
+  body::before{
+    content:"";
+    position:fixed; inset:0; z-index:0;
+    background: linear-gradient(120deg, rgba(255,182,193,0.12), rgba(166,193,238,0.12), rgba(255,217,168,0.08));
+    mix-blend-mode: screen;
+    filter: blur(2px) saturate(1.02);
+    animation: floatHue 14s linear infinite alternate;
+    pointer-events:none;
+  }
+  @keyframes floatHue { from{transform:translateY(0) rotate(0deg)} to{transform:translateY(-25px) rotate(2deg)} }
+
+  /* main container */
+  .page{
+    position:relative; z-index:1;
+    min-height:100vh;
+    display:flex; flex-direction:column; align-items:center;
+    padding:36px 20px 80px;
+    gap:20px;
+  }
+
+  .container{width:100%; max-width:var(--max-width); display:grid; grid-template-columns:1fr 360px; gap:28px; align-items:flex-start}
+
+  /* NAV */
+  nav{display:flex; justify-content:space-between; align-items:center; margin-bottom:6px}
+  .brand{display:flex; align-items:center; gap:12px}
+  .logo{
+    width:50px; height:50px; border-radius:12px;
+    background:linear-gradient(135deg,var(--accent-1),var(--accent-2));
+    display:grid; place-items:center; color:white; font-weight:700; font-size:16px; box-shadow:var(--shadow-1);
+  }
+  .brand .title{font-weight:700; letter-spacing:0.2px}
+  .nav-actions{display:flex; gap:10px; align-items:center}
+  .icon-btn{
+    background:var(--glass); border:1px solid rgba(255,255,255,0.12); padding:8px 10px; border-radius:12px; cursor:pointer; display:inline-flex; align-items:center; gap:8px;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .icon-btn:hover{transform:translateY(-4px); box-shadow:0 8px 28px rgba(0,0,0,0.12)}
+  .nav-links{display:flex; gap:8px}
+  .nav-links a{padding:8px 12px; border-radius:10px; text-decoration:none; color:var(--muted-dark); font-weight:600; transition:all .18s}
+  .nav-links a:hover, .nav-links a:focus{color:var(--text-dark); transform:translateY(-3px)}
+
+
+  /* HERO (left column top) */
+  #hero{
+    background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.72));
+    border-radius: var(--radius); padding:22px; border:1px solid rgba(255,255,255,0.5);
+    box-shadow:var(--shadow-1); backdrop-filter: blur(10px) saturate(1.08);
+    position:relative; overflow:hidden;
+  }
+  /* floating accents */
+  #hero .accent {position:absolute; border-radius:50%; filter:blur(28px); opacity:0.26; pointer-events:none}
+  #hero .accent.a1{width:260px;height:260px; right:-80px; top:-100px; background:linear-gradient(135deg,var(--accent-1),transparent)}
+  #hero .accent.a2{width:160px;height:160px; left:-60px; bottom:-80px; background:linear-gradient(135deg,var(--accent-2),transparent)}
+
+  .hero-grid{display:flex; gap:18px; align-items:center}
+  .avatar{
+    width:120px; height:120px; border-radius:18px; overflow:hidden; flex:0 0 120px;
+    border:1px solid rgba(255,255,255,0.45); box-shadow:0 10px 30px rgba(0,0,0,0.18);
+    background:linear-gradient(135deg,var(--accent-1),var(--accent-2)); display:grid; place-items:center;
+  }
+  .avatar img{width:100%; height:100%; object-fit:cover; display:block}
+  .hero-title h1{font-size:30px; margin:0; color:var(--text-dark)}
+  .hero-title p{margin:6px 0 0; color:var(--muted-dark); font-weight:600}
+  .tag{margin-top:12px; display:inline-block; padding:8px 12px; border-radius:999px; background:linear-gradient(90deg, rgba(255,182,193,0.12), rgba(166,193,238,0.12)); font-weight:700; color:var(--text-dark); font-size:13px}
+
+  .cta{margin-top:14px; display:flex; gap:10px; flex-wrap:wrap}
+  .btn{
+    padding:10px 14px; border-radius:12px; font-weight:700; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:10px; border:none;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn-primary{background:linear-gradient(90deg,var(--accent-1),var(--accent-2)); color:white; box-shadow:0 10px 30px rgba(166,193,238,0.18)}
+  .btn-outline{background:transparent; border:1px solid rgba(7,17,40,0.06); color:var(--muted-dark)}
+  .btn:hover{transform:translateY(-4px)}
+
+
+  /* panels inside hero */
+  .panel{margin-top:18px;background:var(--glass); border-radius:12px; padding:16px; border:1px solid var(--glass-strong); backdrop-filter: blur(8px); box-shadow:0 6px 20px rgba(0,0,0,0.06)}
+  .section-title{display:flex; align-items:center; gap:12px; margin-bottom:8px}
+  .section-title h3{margin:0; font-size:16px; background:linear-gradient(90deg,var(--accent-1),var(--accent-2)); -webkit-background-clip:text; color:transparent; font-weight:800}
+  .muted{color:var(--muted-dark); font-size:14px}
+
+  .skills {display:flex; flex-wrap:wrap; gap:10px; margin-top:8px}
+  .pill{background:linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,255,255,0.8)); padding:8px 12px; border-radius:999px; font-weight:700; color:var(--text-dark); box-shadow:0 8px 20px rgba(2,6,23,0.06)}
+
+  /* PROJECTS grid */
+  .projects-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:12px; margin-top:12px}
+  .project{
+    border-radius:12px; overflow:hidden; position:relative; cursor:pointer;
+    transform:translateY(0); transition:transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s;
+    border:1px solid rgba(255,255,255,0.6);
+    background:linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,255,255,0.75));
+  }
+  .project:hover{transform:translateY(-8px); box-shadow:0 18px 40px rgba(2,6,23,0.12)}
+  .project .thumb{height:140px; width:100%; object-fit:cover; display:block}
+  .project .info{padding:12px}
+  .project .title{font-weight:800; margin-bottom:6px}
+  .project .desc{font-size:13px; color:var(--muted-dark)}
+
+  /* right column */
+  aside{display:flex; flex-direction:column; gap:16px; align-self:start}
+  .contact-card{background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.82)); border-radius:12px; padding:16px; border:1px solid rgba(255,255,255,0.6); backdrop-filter: blur(8px)}
+  .socials{display:flex; gap:8px; margin-top:10px; flex-wrap:wrap}
+  .social{padding:8px 12px; border-radius:12px; font-weight:800; text-decoration:none; color:white; display:inline-flex; align-items:center; gap:8px; box-shadow:0 10px 30px rgba(166,193,238,0.16)}
+  .social.insta{background:linear-gradient(45deg,#ff7eb6,#ffb86b)}
+  .social.mail{background:linear-gradient(90deg,#a8c6ff,#ffd9a8); color:var(--text-dark)}
+
+  /* footer */
+  footer{grid-column:1 / -1; text-align:center; color:var(--muted-dark); margin-top:10px}
+
+  /* modal for project details */
+  .modal-backdrop{position:fixed; inset:0; background:rgba(2,6,23,0.6); display:none; align-items:center; justify-content:center; z-index:50; padding:20px}
+  .modal{width:100%; max-width:900px; background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.96)); border-radius:14px; padding:20px; position:relative}
+  .modal .media{height:320px; border-radius:10px; overflow:hidden}
+  .close-btn{position:absolute; right:14px; top:14px; background:transparent; border:none; font-weight:800; font-size:18px; cursor:pointer}
+
+  /* small devices */
+  @media (max-width:1100px){
+    .container{grid-template-columns:1fr}
+    .projects-grid{grid-template-columns:repeat(1,1fr)}
+    aside{position:relative; top:0}
+  }
+  @media (max-width:520px){
+    .hero-grid{flex-direction:row; gap:12px}
+    .avatar{width:88px;height:88px}
+    .brand .title{display:none}
+    .nav-links{display:none}
+    .hero-title h1{font-size:20px}
+  }
+
+  /* accessibility focus */
+  a:focus, button:focus{outline:3px solid rgba(166,193,238,0.22); outline-offset:4px; border-radius:8px}
+</style>
+</head>
+<body>
+  <div class="page" role="document">
+    <div class="container" style="align-items:start;">
+
+      <!-- LEFT COLUMN: hero + content -->
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <nav aria-label="Main navigation">
+          <div class="brand">
+            <div class="logo" aria-hidden="true">LQ</div>
+            <div>
+              <div class="title">Lobaroy Qobulova</div>
+              <div style="font-size:13px;color:var(--muted-dark);margin-top:3px">Web dasturlash • IT yo'nalishida talabasi</div>
+            </div>
+          </div>
+
+          <div class="nav-actions" style="justify-self:end;">
+            <div class="nav-links" role="navigation" aria-label="In-page links">
+              <a href="#about">About</a>
+              <a href="#skills">Skills</a>
+              <a href="#projects">Projects</a>
+              <a href="#contact">Contact</a>
+            </div>
+
+            <button id="themeToggle" class="icon-btn" title="Toggle theme" aria-pressed="false" style="margin-left:12px">🌙</button>
+          </div>
+        </nav>
+
+        <section id="hero" aria-labelledby="hero-heading">
+          <div class="accent a1" aria-hidden="true"></div>
+          <div class="accent a2" aria-hidden="true"></div>
+
+          <div class="hero-grid">
+            <div class="avatar" aria-hidden="false">
+              <!-- Replace src with your photo later -->
+              <img id="profileImg" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80" alt="Lobaroy Qobulova — profil rasmi">
+            </div>
+
+            <div class="hero-title">
+              <h1 id="hero-heading">Lobaroy Qobulova</h1>
+              <p>IT yo'nalishi talabasi — Web dasturlash</p>
+              <div class="tag" aria-hidden="true">HTML • CSS • JavaScript</div>
+
+              <div class="cta" style="margin-top:12px">
+                <a class="btn btn-primary" href="#projects">Mening ishlarim</a>
+                <a class="btn btn-outline" href="#contact">Aloqa</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel" style="margin-top:18px">
+            <div class="section-title"><h3>Salom! Men haqimda</h3></div>
+            <p class="muted">Men <strong>Lobaroy Qobulova</strong> — web dasturlashga ixlos qo‘ygan IT talabasi. Frontend va UX bilan ishlashni yoqtiraman: chiroyli, tez va qulay interfeyslar yarataman. Hozircha HTML, CSS va JavaScript bilan mustahkam asosga egaman.</p>
+          </div>
+
+          <div class="panel" style="margin-top:14px">
+            <div class="section-title"><h3>Ko'nikmalar</h3></div>
+            <div class="skills" id="skills">
+              <div class="pill">HTML5</div>
+              <div class="pill">CSS3 (Flex/Grid)</div>
+              <div class="pill">JavaScript (Vanilla)</div>
+              <div class="pill">Responsive dizayn</div>
+              <div class="pill">UI/UX asoslari</div>
+            </div>
+          </div>
+
+          <div class="panel" id="projects" style="margin-top:14px">
+            <div class="section-title"><h3>So'nggi loyihalar</h3></div>
+
+            <!-- PROJECT 1 -->
+            <div class="projects-grid">
+              <article class="project" tabindex="0" role="button" aria-pressed="false" data-project="1">
+                <img class="thumb" src="https://images.unsplash.com/photo-1600180758890-0a0c9b8c8a1b?auto=format&fit=crop&w=900&q=60" alt="CSS Car Game screenshot">
+                <div class="info">
+                  <div class="title">CSS Mini Car Game (HTML + CSS)</div>
+                  <div class="desc">Interaktiv, faqat HTML/CSS yordamida yaratilgan kichik o'yin. Touch va keyboard qo'llab-quvvatlanadi. O'yinni samarali animatsiyalar bilan yaratdim.</div>
+                </div>
+              </article>
+
+              <!-- PROJECT 2 -->
+              <article class="project" tabindex="0" role="button" aria-pressed="false" data-project="2">
+                <img class="thumb" src="https://images.unsplash.com/photo-1526378724499-33f1d3a3f7a6?auto=format&fit=crop&w=900&q=60" alt="Course platform mockup">
+                <div class="info">
+                  <div class="title">Mini Course Platform (Prototype)</div>
+                  <div class="desc">Landing va kurs boshqaruv prototipi — kurslar ro'yxati, sahifa dizayni va responsiv karta komponentlari. Django / backend uchun tayyor dizayn konsepti.</div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- SMALL FOOTER note -->
+        <footer style="margin-top:12px">© <span id="year"></span> Lobaroy Qobulova — Web dasturlash talabasi</footer>
+      </div>
+
+      <!-- RIGHT COLUMN: contact and quick actions -->
+      <aside>
+        <div class="contact-card" id="contact">
+          <div class="section-title"><h3>Aloqa</h3></div>
+          <p class="muted">Email: <a href="mailto:example@gmail.com" style="font-weight:800;color:inherit;text-decoration:none">example@gmail.com</a></p>
+          <p class="muted">Instagram: <a href="https://instagram.com/asalka_2001_1" target="_blank" rel="noopener noreferrer" style="font-weight:800;color:inherit;text-decoration:none">@asalka_2001_1</a></p>
+          <p class="muted">Telegram: <span style="font-weight:800">@telegram_username</span></p>
+
+          <div style="height:10px"></div>
+
+          <div class="section-title"><h3>Quick actions</h3></div>
+          <a class="social insta" href="https://instagram.com/asalka_2001_1" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a class="social mail" href="mailto:example@gmail.com">Send Email</a>
+
+          <div style="height:12px"></div>
+          <button id="downloadCV" class="icon-btn" aria-label="Download CV">📄 Yuklab olish (CV)</button>
+          <button id="copyLink" class="icon-btn" aria-label="Copy profile link">🔗 Nusxalash</button>
+        </div>
+
+        <div class="contact-card" style="text-align:center">
+          <div class="section-title"><h3>Tez ma'lumot</h3></div>
+          <p class="muted" style="font-weight:700">IT yo'nalishi • HTML • CSS • JavaScript</p>
+          <div style="height:10px"></div>
+          <a class="btn btn-primary" href="#projects">Portfolio ko'rish</a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- PROJECT MODAL (hidden by default) -->
+  <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-hidden="true" aria-modal="true">
+    <div class="modal" role="document">
+      <button class="close-btn" id="closeModal" aria-label="Close">✕</button>
+      <div id="modalContent">
+        <!-- Filled dynamically -->
+      </div>
+    </div>
+  </div>
+
+<script>
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Theme toggle (light/dark)
+  const themeToggle = document.getElementById('themeToggle');
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    const isDark = document.body.classList.contains('dark');
+    themeToggle.textContent = isDark ? '☀️' : '🌙';
+    themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+  });
+
+  // Copy profile link
+  document.getElementById('copyLink').addEventListener('click', async function(){
+    try{
+      await navigator.clipboard.writeText(location.href);
+      this.textContent = '✅ Nusxalandi';
+      setTimeout(()=> this.textContent = '🔗 Nusxalash', 1600);
+    }catch(e){
+      alert('Nusxalash imkoni yo‘q — brauzer sozlamalarini tekshiring.');
+    }
+  });
+
+  // Fake CV download (generates a simple text file)
+  document.getElementById('downloadCV').addEventListener('click', function(){
+    const cvText = `Lobaroy Qobulova - Web dasturlash talabasi\\nSkills: HTML, CSS, JavaScript\\nInstagram: @asalka_2001_1`;
+    const blob = new Blob([cvText], {type: 'text/plain;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'Lobaroy_Qobulova_CV.txt';
+    document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+  });
+
+  // Projects data (two projects created by me as placeholders)
+  const projects = {
+    1: {
+      id:1,
+      title: "CSS Mini Car Game",
+      tech: ["HTML","CSS"],
+      img: "https://images.unsplash.com/photo-1600180758890-0a0c9b8c8a1b?auto=format&fit=crop&w=1400&q=60",
+      long: `<p><strong>Ta'rif:</strong> Bu loyiha HTML va CSS yordamida yaratilgan mini avtomobil o'yinidir. JS ishlatmasdan animatsiyalar, keyframe orqali harakat va zarba effektlari simulyatsiya qilindi.`
+        + `</p><p><strong>Texnologiyalar:</strong> HTML, CSS (Keyframes, transforms).</p>`
+        + `<p><strong>Demo:</strong> <a href="#" onclick="alert('Demo server mavjud emas — bu misol loyihadir')">Live (misol)</a></p>`
+    },
+    2: {
+      id:2,
+      title: "Course Platform Prototype",
+      tech: ["HTML","CSS","Design"],
+      img: "https://images.unsplash.com/photo-1526378724499-33f1d3a3f7a6?auto=format&fit=crop&w=1400&q=60",
+      long: `<p><strong>Ta'rif:</strong> Bu loyiha — onlayn kurslar uchun prototip: kurslar ro'yxati, kurs sahifasi va responsiv karta dizaynlari. Backend uchun Django integratsiyasiga tayyor konsept.</p>`
+        + `<p><strong>Texnologiyalar:</strong> HTML, CSS, prototyping.</p>`
+        + `<p><strong>Repo:</strong> <a href="#" onclick="alert('Kod namuna sifatida mavjud emas — bu demo tarkibdir')">GitHub (misol)</a></p>`
+    }
+  };
+
+  // Modal logic
+  const modalBackdrop = document.getElementById('modalBackdrop');
+  const modalContent = document.getElementById('modalContent');
+  const closeModalBtn = document.getElementById('closeModal');
+
+  function openProject(id){
+    const p = projects[id];
+    modalContent.innerHTML = `
+      <h2 style="margin:0 0 8px">${p.title}</h2>
+      <div style="display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap">
+        <div style="flex:1; min-width:240px">
+          <div class="media" style="background-image:url('${p.img}'); background-size:cover; background-position:center; height:260px; border-radius:10px"></div>
+        </div>
+        <div style="flex:1; min-width:240px">
+          ${p.long}
+          <div style="height:10px"></div>
+          <div><strong>Texnologiyalar:</strong> ${p.tech.join(', ')}</div>
+        </div>
+      </div>
+    `;
+    modalBackdrop.style.display = 'flex';
+    modalBackdrop.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    closeModalBtn.focus();
+  }
+
+  function closeModal(){
+    modalBackdrop.style.display = 'none';
+    modalBackdrop.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  // Attach click / keyboard on project cards
+  document.querySelectorAll('.project').forEach(card=>{
+    card.addEventListener('click', ()=> openProject(card.dataset.project));
+    card.addEventListener('keydown', (e)=> { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openProject(card.dataset.project); }});
+  });
+
+  closeModalBtn.addEventListener('click', closeModal);
+  modalBackdrop.addEventListener('click', (e)=> { if(e.target === modalBackdrop) closeModal(); });
+  document.addEventListener('keydown', (e)=> { if(e.key === 'Escape') closeModal(); });
+
+  // graceful fallback if profile image fails
+  const profileImg = document.getElementById('profileImg');
+  profileImg.addEventListener('error', ()=> {
+    profileImg.style.display = 'none';
+    document.querySelector('.avatar').textContent = 'LQ';
+    document.querySelector('.avatar').style.fontWeight = '800';
+    document.querySelector('.avatar').style.fontSize = '20px';
+  });
+
+  // Smooth in-page scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', function(e){
+      const href = this.getAttribute('href');
+      if(href.length>1){
+        e.preventDefault();
+        document.querySelector(href).scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    });
+  });
+</script>
+</body>
+</html>
