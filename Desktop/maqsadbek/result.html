@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Test Natijalari | Maqsadbek Academy</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-theme">
+
+  <header class="navbar">
+    <div class="logo"><span>Maqsadbek</span> Academy</div>
+    <nav class="nav-links">
+      <a href="index.html"><i class="fas fa-home"></i> Bosh sahifa</a>
+    </nav>
+  </header>
+
+  <main class="result-container">
+    <div class="result-card">
+      <div class="result-score" id="resultScore">0%</div>
+      <h1 id="resultTitle">Test Yakunlandi! 🎉</h1>
+      <p class="result-text" id="resultText"></p>
+      
+      <div class="result-details">
+        <div class="detail-item">
+          <i class="fas fa-check-circle"></i>
+          <span>To'g'ri javoblar: <strong id="correctAnswers">0</strong></span>
+        </div>
+        <div class="detail-item">
+          <i class="fas fa-times-circle"></i>
+          <span>Noto'g'ri javoblar: <strong id="wrongAnswers">0</strong></span>
+        </div>
+        <div class="detail-item">
+          <i class="fas fa-chart-line"></i>
+          <span>Umumiy savollar: <strong>25</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="certificate-section gold-border">
+      <h2><i class="fas fa-certificate"></i> Sertifikat Olish</h2>
+      <p>Ism va familiyangizni kiriting va sertifikat oling:</p>
+      <input type="text" class="certificate-input" id="studentName" placeholder="Ism Familiya">
+      <button class="btn gold-btn" id="generateCert">
+        <i class="fas fa-download"></i> Sertifikat Yaratish
+      </button>
+    </div>
+
+    <div class="certificate" id="certificate">
+      <h2>🎓 Sertifikat</h2>
+      <div class="certificate-content">
+        <h3 id="certStudentName">Ism Familiya</h3>
+        <p>Maqsadbek Academy tomonidan berildi</p>
+        <p>Fan: <strong id="certSubject">Matematika</strong></p>
+        <p>Natija: <strong id="certScore">0/25 (0%)</strong></p>
+        <p>Sana: <strong id="certDate">01.01.2025</strong></p>
+      </div>
+      <div class="certificate-stamp">
+        <i class="fas fa-stamp"></i>
+      </div>
+      <button class="btn black-btn" id="downloadCert">
+        <i class="fas fa-print"></i> Sertifikatni Yuklab Olish
+      </button>
+    </div>
+
+    <div class="action-buttons">
+      <a href="index.html" class="btn black-btn">
+        <i class="fas fa-home"></i> Bosh Sahifaga Qaytish
+      </a>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</body>
+</html>

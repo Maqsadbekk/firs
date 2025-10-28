@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IT Testi | Maqsadbek Academy</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-theme">
+
+  <header class="navbar">
+    <div class="logo"><span>Maqsadbek</span> Academy</div>
+    <nav class="nav-links">
+      <a href="index.html"><i class="fas fa-home"></i> Bosh sahifa</a>
+    </nav>
+  </header>
+
+  <main class="test-container">
+    <div class="test-header">
+      <h1>💻 IT & Dasturlash Testi</h1>
+      <p>25 ta savol | Dasturlash asoslari va IT bilimlari</p>
+    </div>
+
+    <form id="itTest">
+      <!-- Progress Bar -->
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFillIT"></div>
+        </div>
+        <div class="progress-text">
+          <span>Javob berildi: <strong id="currentQIT">0</strong>/25</span>
+          <span><strong id="progressPercentIT">0%</strong></span>
+        </div>
+      </div>
+
+      <!-- Savollar -->
+      <div class="quiz-card">
+        <div class="qnum">1. HTML qanday qisqartma?</div>
+        <input type="radio" id="q1a" name="q1" value="a">
+        <label for="q1a">A) Hyper Text Markup Language</label>
+        
+        <input type="radio" id="q1b" name="q1" value="b">
+        <label for="q1b">B) High Tech Modern Language</label>
+        
+        <input type="radio" id="q1c" name="q1" value="c">
+        <label for="q1c">C) Hyper Transfer Markup Language</label>
+        
+        <input type="radio" id="q1d" name="q1" value="d">
+        <label for="q1d">D) Home Tool Markup Language</label>
+      </div>
+
+      <div class="quiz-card">
+        <div class="qnum">2. Quyidagilar qaysi biri dasturlash tili emas?</div>
+        <input type="radio" id="q2a" name="q2" value="a">
+        <label for="q2a">A) Python</label>
+        
+        <input type="radio" id="q2b" name="q2" value="b">
+        <label for="q2b">B) Java</label>
+        
+        <input type="radio" id="q2c" name="q2" value="c">
+        <label for="q2c">C) HTML</label>
+        
+        <input type="radio" id="q2d" name="q2" value="d">
+        <label for="q2d">D) C++</label>
+      </div>
+
+      <div class="quiz-card">
+        <div class="qnum">3. CSS nima uchun ishlatiladi?</div>
+        <input type="radio" id="q3a" name="q3" value="a">
+        <label for="q3a">A) Veb sahifa strukturasi uchun</label>
+        
+        <input type="radio" id="q3b" name="q3" value="b">
+        <label for="q3b">B) Veb sahifa stililari uchun</label>
+        
+        <input type="radio" id="q3c" name="q3" value="c">
+        <label for="q3c">C) Ma'lumotlar bazasi uchun</label>
+        
+        <input type="radio" id="q3d" name="q3" value="d">
+        <label for="q3d">D) Dastur logikasi uchun</label>
+      </div>
+
+      <div class="quiz-card">
+        <div class="qnum">4. JavaScript qaysi yilda yaratilgan?</div>
+        <input type="radio" id="q4a" name="q4" value="a">
+        <label for="q4a">A) 1990</label>
+        
+        <input type="radio" id="q4b" name="q4" value="b">
+        <label for="q4b">B) 1995</label>
+        
+        <input type="radio" id="q4c" name="q4" value="c">
+        <label for="q4c">C) 2000</label>
+        
+        <input type="radio" id="q4d" name="q4" value="d">
+        <label for="q4d">D) 2005</label>
+      </div>
+
+      <div class="quiz-card">
+        <div class="qnum">5. RGB modelida qancha asosiy rang mavjud?</div>
+        <input type="radio" id="q5a" name="q5" value="a">
+        <label for="q5a">A) 2</label>
+        
+        <input type="radio" id="q5b" name="q5" value="b">
+        <label for="q5b">B) 3</label>
+        
+        <input type="radio" id="q5c" name="q5" value="c">
+        <label for="q5c">C) 4</label>
+        
+        <input type="radio" id="q5d" name="q5" value="d">
+        <label for="q5d">D) 5</label>
+      </div>
+      <div class="quiz-card">
+        <div class="qnum">6. Quyidagilar qaysi biri framework emas?</div>
+        <input type="radio" id="q6a" name="q6" value="a">
+        <label for="q6a">A) React</label>
+        
+        <input type="radio" id="q6b" name="q6" value="b">
+        <label for="q6b">B) Angular</label>
+        
+        <input type="radio" id="q6c" name="q6" value="c">
+        <label for="q6c">C) Django</label>
+        
+        <input type="radio" id="q6d" name="q6" value="d">
+        <label for="q6d">D) Java</label>
+      </div>
+
+      <div class="quiz-card">
+        <div class="qnum">7. IP manzil nima?</div>
+        <input type="radio" id="q7a" name="q7" value="a">
+        <label for="q7a">A) Internet Protocol manzil</label>
+        
+        <input type="radio" id="q7b" name="q7" value="b">
+        <label for="q7b">B) International Phone manzil</label>
+        
+        <input type="radio" id="q7c" name="q7" value="c">
+        <label for="q7c">C) Internet Page manzil</label>
+        
+        <input type="radio" id="q7d" name="q7" value="d">
+        <label for="q7d">D) Internal Program manzil</label>
+      </div>
+
+      <div class="quiz-card">
+        <div class="qnum">8. Quyidagi qaysi biri ma'lumotlar bazasi?</div>
+        <input type="radio" id="q8a" name="q8" value="a">
+        <label for="q8a">A) MySQL</label>
+        
+        <input type="radio" id="q8b" name="q8" value="b">
+        <label for="q8b">B) Node.js</label>
+        
+        <input type="radio" id="q8c" name="q8" value="c">
+        <label for="q8c">C) React</label>
+        
+        <input type="radio" id="q8d" name="q8" value="d">
+        <label for="q8d">D) CSS</label>
+      </div>
+
+      <div class="quiz-card">
+        <div class="qnum">9. HTTP qanday qisqartma?</div>
+        <input type="radio" id="q9a" name="q9" value="a">
+        <label for="q9a">A) HyperText Transfer Protocol</label>
+        
+        <input type="radio" id="q9b" name="q9" value="b">
+        <label for="q9b">B) High Tech Transfer Process</label>
+        
+        <input type="radio" id="q9c" name="q9" value="c">
+        <label for="q9c">C) Hyper Transfer Text Protocol</label>
+        
+        <input type="radio" id="q9d" name="q9" value="d">
+        <label for="q9d">D) Home Tool Transfer Process</label>
+      </div>
+
+      <div class="quiz-card">
+        <div class="qnum">10. Python dasturlash tili qachon yaratilgan?</div>
+        <input type="radio" id="q10a" name="q10" value="a">
+        <label for="q10a">A) 1989</label>
+        
+        <input type="radio" id="q10b" name="q10" value="b">
+        <label for="q10b">B) 1991</label>
+        
+        <input type="radio" id="q10c" name="q10" value="c">
+        <label for="q10c">C) 1995</label>
+        
+        <input type="radio" id="q10d" name="q10" value="d">
+        <label for="q10d">D) 2000</label>
+      </div>
+
+      <div class="quiz-card">
+        <div class="qnum">11. Quyidagilar qaysi biri operatsion sistema emas?</div>
+        <input type="radio" id="q11a" name="q11" value="a">
+        <label for="q11a">A) Windows</label>
+        
+        <input type="radio" id="q11b" name="q11" value="b">
+        <label for="q11b">B) Linux</label>
+        
+        <input type="radio" id="q11c" name="q11" value="c">
+        <label for="q11c">C) macOS</label>
+        
+        <input type="radio" id="q11d" name="q11" value="d">
+        <label for="q11d">D) Chrome</label>
+      </div>
+
+      <div class="quiz-card">
+        <div class="qnum">12. CPU nima?</div>
+        <input type="radio" id="q12a" name="q12" value="a">
+        <label for="q12a">A) Central Processing Unit</label>
+        
+        <input type="radio" id="q12b" name="q12" value="b">
+        <label for="q12b">B) Computer Personal Unit</label>
+        
+        <input type="radio" id="q12c" name="q12" value="c">
+        <label for="q12c">C) Central Program Utility</label>
+        
+        <input type="radio" id="q12d" name="q12" value="d">
+        <label for="q12d">D) Computer Processing Utility</label>
+      </div>
+      <div class="quiz-card">
+        <div class="qnum">13. RAM nima?</div>
+        <input type="radio" id="q13a" name="q13" value="a">
+        <label for="q13a">A) Random Access Memory</label>
+        
+        <input type="radio" id="q13b" name="q13" value="b">
+        <label for="q13b">B) Read Access Memory</label>
+        
+        <input type="radio" id="q13c" name="q13" value="c">
+        <label for="q13c">C) Random Available Memory</label>
+        
+        <input type="radio" id="q13d" name="q13" value="d">
+        <label for="q13d">D) Read Available Memory</label>
+      </div>
+
+      <div class="quiz-card">
+        <div class="qnum">14. Quyidagilar qaysi biri brauzer emas?</div>
+        <input type="radio" id="q14a" name="q14" value="a">
+        <label for="q14a">A) Chrome</label>
+        
+        <input type="radio" id="q14b" name="q14" value="b">
+        <label for="q14b">B) Firefox</label>
+        
+        <input type="radio" id="q14c" name="q14" value="c">
+        <label for="q14c">C) Safari</label>
+        
+        <input type="radio" id="q14d" name="q14" value="d">
+        <label for="q14d">D) Windows</label>
+      </div>
+
+      <div class="quiz-card">
+        <div class="qnum">15. URL nima?</div>
+        <input type="radio" id="q15a" name="q15" value="a">
+        <label for="q15a">A) Uniform Resource Locator</label>
+        
+        <input type="radio" id="q15b" name="q15" value="b">
+        <label for="q15b">B) Universal Resource Link</label>
+        
+        <input type="radio" id="q15c" name="q15" value="c">
+        <label for="q15c">C) Uniform Resource Link</label>
+        
+        <input type="radio" id="q15d" name="q15" value="d">
+        <label for="q15d">D) Universal Resource Locator</label>
+      </div>
+
+      <div class="quiz-card">
+        <div class="qnum">16. Git nima?</div>
+        <input type="radio" id="q16a" name="q16" value="a">
+        <label for="q16a">A) Versiya boshqaruv tizimi</label>
+        
+        <input type="radio" id="q16b" name="q16" value="b">
+        <label for="q16b">B) Dasturlash tili</label>
+        
+        <input type="radio" id="q16c" name="q16" value="c">
+        <label for="q16c">C) Operatsion sistema</label>
+        
+        <input type="radio" id="q16d" name="q16" value="d">
+        <label for="q16d">D) Ma'lumotlar bazasi</label>
+      </div>
+
+      <div class="quiz-card">
+        <div class="qnum">17. Quyidagilar qaysi biri backend til hisoblanadi?</div>
+        <input type="radio" id="q17a" name="q17" value="a">
+        <label for="q17a">A) PHP</label>
+        
+        <input type="radio" id="q17b" name="q17" value="b">
+        <label for="q17b">B) HTML</label>
+        
+        <input type="radio" id="q17c" name="q17" value="c">
+        <label for="q17c">C) CSS</label>
+        
+        <input type="radio" id="q17d" name="q17" value="d">
+        <label for="q17d">D) React</label>
+      </div>
+
+      <div class="quiz-card">
+        <div class="qnum">18. API nima?</div>
+        <input type="radio" id="q18a" name="q18" value="a">
+        <label for="q18a">A) Application Programming Interface</label>
+        
+        <input type="radio" id="q18b" name="q18" value="b">
+        <label for="q18b">B) Advanced Programming Interface</label>
+        
+        <input type="radio" id="q18c" name="q18" value="c">
+        <label for="q18c">C) Application Program Integration</label>
+        
+        <input type="radio" id="q18d" name="q18" value="d">
+        <label for="q18d">D) Advanced Program Integration</label>
+      </div>
+
+      <div class="quiz-card">
+        <div class="qnum">19. Quyidagilar qaysi biri cloud service provider?</div>
+        <input type="radio" id="q19a" name="q19" value="a">
+        <label for="q19a">A) AWS</label>
+        
+        <input type="radio" id="q19b" name="q19" value="b">
+        <label for="q19b">B) HTML</label>
+        
+        <input type="radio" id="q19c" name="q19" value="c">
+        <label for="q19c">C) CSS</label>
+        
+        <input type="radio" id="q19d" name="q19" value="d">
+        <label for="q19d">D) Python</label>
+      </div>
+      <div class="quiz-card">
+        <div class="qnum">20. DNS nima?</div>
+        <input type="radio" id="q20a" name="q20" value="a">
+        <label for="q20a">A) Domain Name System</label>
+        
+        <input type="radio" id="q20b" name="q20" value="b">
+        <label for="q20b">B) Data Name System</label>
+        
+        <input type="radio" id="q20c" name="q20" value="c">
+        <label for="q20c">C) Domain Network System</label>
+        
+        <input type="radio" id="q20d" name="q20" value="d">
+        <label for="q20d">D) Data Network System</label>
+      </div>
+
+      <div class="quiz-card">
+        <div class="qnum">21. Quyidagilar qaysi biri frontend framework?</div>
+        <input type="radio" id="q21a" name="q21" value="a">
+        <label for="q21a">A) Vue.js</label>
+        
+        <input type="radio" id="q21b" name="q21" value="b">
+        <label for="q21b">B) Django</label>
+        
+        <input type="radio" id="q21c" name="q21" value="c">
+        <label for="q21c">C) Laravel</label>
+        
+        <input type="radio" id="q21d" name="q21" value="d">
+        <label for="q21d">D) Spring</label>
+      </div>
+
+      <div class="quiz-card">
+        <div class="qnum">22. SQL nima?</div>
+        <input type="radio" id="q22a" name="q22" value="a">
+        <label for="q22a">A) Structured Query Language</label>
+        
+        <input type="radio" id="q22b" name="q22" value="b">
+        <label for="q22b">B) Simple Query Language</label>
+        
+        <input type="radio" id="q22c" name="q22" value="c">
+        <label for="q22c">C) Structured Question Language</label>
+        
+        <input type="radio" id="q22d" name="q22" value="d">
+        <label for="q22d">D) Simple Question Language</label>
+      </div>
+
+      <div class="quiz-card">
+        <div class="qnum">23. Quyidagilar qaysi biri NoSQL ma'lumotlar bazasi?</div>
+        <input type="radio" id="q23a" name="q23" value="a">
+        <label for="q23a">A) MongoDB</label>
+        
+        <input type="radio" id="q23b" name="q23" value="b">
+        <label for="q23b">B) MySQL</label>
+        
+        <input type="radio" id="q23c" name="q23" value="c">
+        <label for="q23c">C) PostgreSQL</label>
+        
+        <input type="radio" id="q23d" name="q23" value="d">
+        <label for="q23d">D) SQLite</label>
+      </div>
+
+      <div class="quiz-card">
+        <div class="qnum">24. AI qanday qisqartma?</div>
+        <input type="radio" id="q24a" name="q24" value="a">
+        <label for="q24a">A) Artificial Intelligence</label>
+        
+        <input type="radio" id="q24b" name="q24" value="b">
+        <label for="q24b">B) Advanced Intelligence</label>
+        
+        <input type="radio" id="q24c" name="q24" value="c">
+        <label for="q24c">C) Artificial Integration</label>
+        
+        <input type="radio" id="q24d" name="q24" value="d">
+        <label for="q24d">D) Advanced Integration</label>
+      </div>
+
+      <div class="quiz-card">
+        <div class="qnum">25. Quyidagilar qaysi biri JavaScript framework?</div>
+        <input type="radio" id="q25a" name="q25" value="a">
+        <label for="q25a">A) React</label>
+        
+        <input type="radio" id="q25b" name="q25" value="b">
+        <label for="q25b">B) Django</label>
+        
+        <input type="radio" id="q25c" name="q25" value="c">
+        <label for="q25c">C) Spring</label>
+        
+        <input type="radio" id="q25d" name="q25" value="d">
+        <label for="q25d">D) Laravel</label>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn gold-btn" style="width: 100%; margin-top: 2rem;">
+        <i class="fas fa-paper-plane"></i> Testni Yakunlash
+      </button>
+    </form>
+  </main>
+  <script src="script.js"></script>
+  <script>
+    // IT testi uchun JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('itTest');
+      const progressFill = document.getElementById('progressFillIT');
+      const currentQ = document.getElementById('currentQIT');
+      const progressPercent = document.getElementById('progressPercentIT');
+      
+      if (form) {
+        form.addEventListener('change', function() {
+          const totalQuestions = 25;
+          const answered = form.querySelectorAll('input[type="radio"]:checked').length;
+          const percent = Math.round((answered / totalQuestions) * 100);
+          
+          if (progressFill) progressFill.style.width = percent + '%';
+          if (currentQ) currentQ.textContent = answered;
+          if (progressPercent) progressPercent.textContent = percent + '%';
+        });
+        
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          calculateScore('it', form);
+        });
+      }
+    });
+
+    // IT testi uchun to'g'ri javoblar
+    window.correctAnswers = window.correctAnswers || {};
+    window.correctAnswers.it = {
+      q1: "a", q2: "c", q3: "b", q4: "b", q5: "b",
+      q6: "d", q7: "a", q8: "a", q9: "a", q10: "b",
+      q11: "d", q12: "a", q13: "a", q14: "d", q15: "a",
+      q16: "a", q17: "a", q18: "a", q19: "a", q20: "a",
+      q21: "a", q22: "a", q23: "a", q24: "a", q25: "a"
+    };
+  </script>
+</body>
+</html>
